@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt-get install -y libsoapysdr-dev soapysdr-module-rtlsdr
 
 # Remove old SoapyRTL if needed

@@ -6,8 +6,8 @@ sudo apt-get install -y libsoapysdr-dev soapysdr-module-rtlsdr
 sudo rm -rf /usr/local/lib/SoapySDR/modules*/*rtlsdr*
 
 # Rebuild SoapyRTL from source
-git clone https://github.com/pothosware/SoapyRTL.git
-cd SoapyRTL
+git clone https://github.com/pothosware/SoapyRTLSDR.git
+cd SoapyRTLSDR
 mkdir build
 cd build
 cmake ..

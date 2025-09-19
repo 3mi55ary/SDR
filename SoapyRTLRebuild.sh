@@ -13,3 +13,17 @@ cmake ..
 make -j$(nproc)
 sudo make install
 sudo ldconfig
+
+# Install SoapySDR dev headers (needed for build)
+sudo apt-get install -y libsoapysdr-dev
+
+# Clone and build the correct plugin
+cd ~/
+git clone https://github.com/pothosware/SoapyRTLSDR.git
+cd SoapyRTLSDR
+mkdir build && cd build
+cmake ..
+make -j$(nproc)
+sudo make install
+sudo ldconfig
+

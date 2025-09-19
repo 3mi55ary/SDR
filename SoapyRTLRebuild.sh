@@ -17,8 +17,10 @@ sudo ldconfig
 # Install SoapySDR dev headers (needed for build)
 sudo apt-get install -y libsoapysdr-dev
 
-# Clone and build the correct plugin
-cd ~/
+# Remove any broken or partial install
+sudo rm -rf ~/SoapyRTLSDR
+
+# Re-clone and rebuild
 git clone https://github.com/pothosware/SoapyRTLSDR.git
 cd SoapyRTLSDR
 mkdir build && cd build

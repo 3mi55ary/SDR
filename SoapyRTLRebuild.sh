@@ -29,3 +29,6 @@ make -j$(nproc)
 sudo make install
 sudo ldconfig
 
+# Link driver support to .8 path
+sudo mkdir -p /usr/local/lib/SoapySDR/modules0.8
+sudo ln -s /usr/local/lib/SoapySDR/modules0.8-3/librtlsdrSupport.so /usr/local/lib/SoapySDR/modules0.8/librtlsdrSupport.so

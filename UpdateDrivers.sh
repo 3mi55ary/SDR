@@ -7,9 +7,9 @@ set -e # Exits on an error
 sudo apt purge ^librtlsdr
 sudo rm -rvf /usr/lib/librtlsdr* /usr/include/rtl-sdr* /usr/local/lib/librtlsdr* /usr/local/include/rtl-sdr* /usr/local/include/rtl_* /usr/local/bin/rtl_*
 
-sudo apt-get install -y libusb-1.0-0-dev git cmake pkg-config
+sudo apt-get install libusb-1.0-0-dev git cmake pkg-config
 git clone https://github.com/osmocom/rtl-sdr
-cd rtl-sdr-blog
+cd rtl-sdr
 mkdir build
 cd build
 cmake ../ -DINSTALL_UDEV_RULES=ON

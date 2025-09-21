@@ -1,14 +1,17 @@
 #!/bin/bash
 
-# Install SDR++ for server mode
+# Update package index
 sudo apt update
-sudo apt install git cmake build-essential libfftw3-dev libusb-1.0-0-dev libglfw3-dev
-git clone https://github.com/AlexandreRouma/SDRPlusPlus.git
-cd SDRPlusPlus
-mkdir build && cd build
-cmake -DINSTALL_UDEV_RULES=ON -DOPT_BUILD_SERVER=ON ..
-make -j$(nproc)
-sudo make install
 
-# Start the server | Change firewall rules based on your preferred firewall
+# Download the latest SDR++ .deb release
+wget -O sdrpp_latest.deb https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest/download/sdrpp_debian_amd64.deb
+
+# Install the .deb package and let APT resolve dependencies
+sudo apt install -y ./sdrpp_latest.deb
+
+# Optional: Reload udev rules if SDR hardware was just plugged in
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+# Launch SDR++ in server mode (adjust firewall rules if needed)
 sdrpp --server --server-bind 0.0.0.0 --server-port 5259

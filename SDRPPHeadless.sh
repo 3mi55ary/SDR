@@ -4,7 +4,7 @@
 sudo apt update
 
 # Download the latest SDR++ .deb release
-wget -O sdrpp_latest.deb https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest/download/sdrpp_debian_bookworm_amd64.deb
+wget -O sdrpp_latest.deb https://github.com/AlexandreRouma/SDRPlusPlus/releases/latest/download/sdrpp_debian_bookworm_aarch64.deb
 
 # Install the .deb package and let APT resolve dependencies
 sudo apt install -y ./sdrpp_latest.deb

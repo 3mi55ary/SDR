@@ -14,4 +14,4 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 
 # Launch SDR++ in server mode (adjust firewall rules if needed)
-sdrpp --server --server-bind 0.0.0.0 --server-port 5259
+sdrpp --addr 0.0.0.0 --port 5259 --server

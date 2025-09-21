@@ -2,7 +2,7 @@
 
 # Install SDR++ for server mode
 sudo apt update
-sudo apt install git cmake build-essential libfftw3-dev libusb-1.0-0-dev
+sudo apt install git cmake build-essential libfftw3-dev libusb-1.0-0-dev libglfw3-dev
 git clone https://github.com/AlexandreRouma/SDRPlusPlus.git
 cd SDRPlusPlus
 mkdir build && cd build

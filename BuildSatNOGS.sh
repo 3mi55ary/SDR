@@ -37,6 +37,13 @@ sudo cp ../rtl-sdr.rules /etc/udev/rules.d/
 sudo ldconfig
 echo 'blacklist dvb_usb_rtl28xxu' | sudo tee --append /etc/modprobe.d/blacklist-dvb_usb_rtl28xxu.conf
 
+# Allows RTL-SDRv4 to be read by the SatNOGS Client Container 
+echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="2838", MODE:="0666"' \
+| sudo tee /etc/udev/rules.d/99-rtlsdr.rules
+
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
 #===============================================================================
 # Set up SatNOGS Client ========================================================
 #===============================================================================

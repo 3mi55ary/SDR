@@ -20,9 +20,18 @@ sudo apt install btop
 sudo apt install duf
 
 #===============================================================================
-# Manual Tools =================================================================
+# Tooling ======================================================================
 #===============================================================================
+# Inspectrum
 sudo apt install inspectrum
+
+# strf
+sudo apt install git make gcc pgplot5 gfortran libpng-dev libx11-dev libgsl-dev libfftw3-dev libsox-dev dos2unix pgplot5-dev
+git clone https://github.com/cbassa/strf.git
+cd strf; make
+sudo make install
+sudo apt install libcmocka-dev libcmocka0
+make tests
 
 #===============================================================================
 # Station Drivers (Only for testing.  Not used by SatNOGS Client) ==============
